@@ -1,0 +1,8 @@
+
+Dec 21, 2023 24:33:22.70 NEW SESSION
+Dec 21, 2023 24:33:22.86 [GFX1-]: shader-cache: Timed out before finishing loads
+Dec 21, 2023 24:33:22.86 [ERROR webrender_bindings::program_cache] shader-cache: Timed out before finishing loads
+
+Dec 22, 2023 24:48:22.44 NEW SESSION
+Dec 22, 2023 24:48:22.53 [GFX1-]: shader-cache: Timed out before finishing loads
+Dec 22, 2023 24:48:22.53 [ERROR webrender_bindings::program_cache] shader-cache: Timed out before finishing loads

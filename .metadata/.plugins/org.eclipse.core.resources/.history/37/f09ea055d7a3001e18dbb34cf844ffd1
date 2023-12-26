@@ -1,0 +1,18 @@
+
+
+
+@font-face {
+	font-family: fonts;
+	src: url(../fonts/moto-verse.otf);
+}
+.top-nav >div{
+	font-family: fonts;
+	font-weight: 900;
+	font-size: 4em;
+}
+.navtop{
+	background-color: #6C63AC;
+}
+.carousel-img{
+	height: 75vh;
+}

@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\bujaw\OneDrive\Desktop\Envision_Project\Java-project\Super_market_web\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3114733958.index
+3977121360.index
+1202639488.index
+1420124106.index
+1508889837.index
+1885171048.index
+3773614154.index

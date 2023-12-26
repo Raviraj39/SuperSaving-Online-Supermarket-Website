@@ -1,0 +1,26 @@
+@charset "ISO-8859-1";
+@font-face {
+	font-family: fonts;
+	src: url(../fonts/moto-verse.otf);
+}
+@font-face {
+  font-family: fonts-peacher;
+  src: url(../fonts/Peacher.ttf);
+}
+
+:root{
+  --fonts-rubic: 'Rubik', sans-serif;
+}
+*{
+  font-family: var(--fonts-rubic);
+}
+
+
+.top-nav{
+	font-family: fonts;
+	font-weight: 900;
+	font-size: 2em;
+}
+.main_top_nav{
+	background-color: #253D5B;
+}
