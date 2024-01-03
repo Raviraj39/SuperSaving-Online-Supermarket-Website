@@ -38,6 +38,7 @@ public class Servlet1 extends HttpServlet {
 					z=1;
 					HttpSession session = request.getSession();
 					session.setAttribute("username",username);
+					
 					response.sendRedirect("AdminHome.jsp?msg=done");	
 				}
 				if(z==0) {
@@ -46,9 +47,12 @@ public class Servlet1 extends HttpServlet {
 			    break;
 			  case ("customer"):
 				ResultSet rs1=stat.executeQuery("select * from register where username='"+username+"' and password='"+password+"'");
+			  
 				while(rs1.next()) {
 					y=1;
+					String email= rs1.getString(4);
 					HttpSession session1 = request.getSession();
+					session1.setAttribute("email", email);
 					session1.setAttribute("username",username);
 					response.sendRedirect("Home.jsp?msg=done");
 				}

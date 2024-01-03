@@ -36,14 +36,8 @@ if("done".equals(msg)){
 	
 	<% }%>
 	
-	
-	
-
-
-
-
-<form method="post" action="addproduct" class="cotainer ">
-		<div class="cotainer mx-5  row" >
+<form method="post" action="addproduct" class="container text-white">
+		<div class="container mx-5  row" >
 		<div class="col-12 col-md-6 my-3">
 		<h3 >Product ID: </h3>
 		<input type="text" class="input-style " name="input1" placeholder="Product ID">
@@ -74,10 +68,10 @@ if("done".equals(msg)){
 
 		</div>
 		
-		<div class=" col-12  my-3">
+		<div class=" col-12 col-md-6  my-5">
 		<button class="button" type="submit">Save <i class='far fa-arrow-alt-circle-right'></i>
-		</div>
 		</button>
+		</div>
 		</div>
  
 </form>

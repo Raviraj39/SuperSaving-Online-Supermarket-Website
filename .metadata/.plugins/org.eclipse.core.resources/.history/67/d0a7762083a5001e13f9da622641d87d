@@ -1,0 +1,11 @@
+ <%@page import ="java.sql.*"%>
+ <%@page import ="java.io.IOException" %>
+ <%@ page import ="java.io.PrintWriter"%>
+ 
+ <% 
+ 
+ String email=session.getAttribute("email").toString();
+ String id = request.getParameter("id");
+ 
+ 
+ %>

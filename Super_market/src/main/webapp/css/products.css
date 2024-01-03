@@ -26,11 +26,21 @@
 }
 
 .product-card {
-    width: 380px;
+    min-width: 380px;
     position: relative;
     box-shadow: 0 2px 7px #dfdfdf;
     margin: 50px auto;
     background: #fafafa;
+}
+
+.box {
+	font-size: 4em;
+	font-weight: 800;
+	color: #253D5B;
+}
+
+.box i{
+	color: #253D5B;
 }
 
 .badge {

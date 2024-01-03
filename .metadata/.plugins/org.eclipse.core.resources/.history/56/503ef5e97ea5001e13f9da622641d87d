@@ -1,0 +1,35 @@
+ <%@page import ="java.sql.*"%>
+ <%@page import ="java.io.IOException" %>
+ <%@ page import ="java.io.PrintWriter"%>
+ 
+ <%
+ 
+ String email=session.getAttribute("email").toString();
+ String id = request.getParameter("id");
+ String indec = request.getParameter("quantity");
+ 
+ int price=0;
+ int total=0;
+ int quantity=0;
+ int final_total=0;
+ try{
+	 Class.forName("com.mysql.cj.jdbc.Driver");
+	 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/super_marketone","root","root");
+	Statement stat = conn.createStatement();
+	ResultSet rs=stat.executeQuery("select * from cart where email='"+email+"'productid='"+id+"' "  );
+	while(rs.next()){
+		price=rs.getInt(5);
+		total=rs.getInt(4);
+		quantity=rs.getInt(2);
+	}
+	if(quantity != 1 && indec.equals("dec") ){
+		response.sendredirect("mycart.jsp")
+	}
+	 
+	 
+ }catch(Exception e){
+	 e.printStackTrace();
+	 
+ }
+ 
+ %>

@@ -1,0 +1,82 @@
+package com.org;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+
+@WebServlet("/addtocart")
+public class addtocart extends HttpServlet {
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		String email=session.getAttribute("email").toString();
+		
+		String product_id= request.getParameter("id");
+		int quantity =1;
+		int product_price=0;
+		int product_total=0;
+		int cart_total=0;
+		
+		
+		int z=0;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/super_marketone","root","root");
+			Statement stat = conn.createStatement();
+			ResultSet rs=stat.executeQuery("select * from addproductadmin where p_id='"+product_id+"'");
+			while(rs.next()) {
+				product_price=rs.getInt(4);
+				product_total=product_price;
+				
+			}
+			ResultSet rs1=stat.executeQuery("select * from  cart where productid='"+product_id+" and email ='"+email+"' and address is NULL ");
+			while(rs1.next()) {
+				cart_total=rs1.getInt(4);
+				cart_total= cart_total+product_total;
+				quantity =rs1.getInt(3);
+				quantity =quantity +1;
+				z=1;
+			}
+			if(z==1) {
+				stat.executeUpdate("update cart set total='"+cart_total+"',quantity='"+quantity+"'where productid ="+product_id+" and email='"+email+"' and address is NULL  ");
+				
+				response.sendRedirect("Home.jsp?msg=exist");
+			}
+			if(z==0) {
+				PreparedStatement ps = conn.prepareStatement("insert into cart (productid ,email,quantity,total,price)values("+product_id+",'"+email+"',"+quantity+","+product_total+","+product_price+")" );
+				ps.executeUpdate();
+				response.sendRedirect("Home.jsp?msg=added");
+			}
+			
+			
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			response.sendRedirect("Home.jsp?msg=invalid");
+
+		}
+		
+		
+		
+		
+	}
+
+//	
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		// TODO Auto-generated method stub
+//		doGet(request, response);
+//	}
+
+}

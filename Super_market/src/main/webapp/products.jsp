@@ -19,93 +19,82 @@
 		rel="stylesheet">
 </head>
 <body>
-<div class="container-fluid main_top_nav ">
-		<div class="text-center py-4  text-white ">
-
-			<img src="./images/illustrations/BikeDilvery.webp" alt="" class="" height="130px">
-			<h3 class="top-nav">SuperSavings Supermarket</h3>
-		</div>
-	</div>
-	<nav class="navbar navbar-expand-lg bg-black text-white py-3">
-		<div class="container text-white">
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse " id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0  ">
-					<li class="nav-item">
-						<a class="nav-link active text-white" href="./Home.jsp">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-white" href="./products.jsp">Products</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-white" href="#">About us</a>
-					</li>
-				</ul>
-				<form class="d-flex" role="search">
-					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-primary mx-2" type="submit">Search</button>
-						<div class="d-flex align-items-center justify-content-between mx-3">
-						<div class="">
-						<i class="fa-regular fa-user "></i></div>
-					<p class="ms-4 "><%= session.getAttribute("username") %></p>
-					</div>					
-					<button class="btn btn-outline-primary mx-2"> <a href="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a></button>
-
-				</form>
-			</div>
-		</div>
-	</nav>
-	
+	        	
+			        	
+		<%@ include file="Header.jsp"  %>
 		
-	
-	
+		
+<%
+		String msg=request.getParameter("msg");
+if("added".equals(msg))
+{
+%>
+<p class="alert text-warning">Product added successfully!</p>
+<%} %>
+<% 
+if("exist".equals(msg))
+{
+%>
+<p class="alert text-warning">Product already exist in you cart! Quantity  increased!</p>
+<%} %>
+<% 
+if("invalid".equals(msg))
+{
+%>
+
+<p class="alert text-warning">Something went to wrong ! try again!</p>
+<%} %>
 	<section>
-		<div class="container ">
-			<div class="row">
-				<div class="product-card col-12 col-md-6 col-lg-4">
+		<div class="mx-0 my-0 p-0">
+			<div class="d-flex flex-coloumn justify-content-center flex-wrap align-items-center m-0 p-0">
+				<%
+			        try {
+						Class.forName("com.mysql.cj.jdbc.Driver");
+						Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/super_marketone","root","root");
+						Statement stat = conn.createStatement();
+						ResultSet rs=stat.executeQuery("select * from addproductadmin where p_active='yes' ");
+						while(rs.next()) {
+								
+			        %>
+				<div class="product-card  col-12 col-md-6 col-xl-3 mx-2  ">
 						<div class="badge">NEW</div>
 						<div class="product-tumb">
-							<img src="./images/illustrations/m1.jpg" alt="">
+						
+							<h2 class="box"><i class="fa-solid fa-box-open fa-2xl"></i></h2>
 						</div>
-				<div class="product-details ">
-				<%
-        try {
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/super_marketone","root","root");
-			Statement stat = conn.createStatement();
-			ResultSet rs=stat.executeQuery("select * from addproductadmin ");
-			while(rs.next()) {
-
-        %>
-							<span class="product-catagory"><%= rs.getString(3) %></span>
+						<div class="product-details">
+							<span class="product-catagory"><%= rs.getString(3) %>   </span>
 							<h4><a href=""><%= rs.getString(2) %></a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
 							<div class="product-bottom-details">
-								<div class="product-price"><small>$96.00</small><%= rs.getString(4) %></div>
+								<div class="product-price"><%= rs.getString(4) %></div>
 								<div class="product-links">
 									<a href=""><i class="fa fa-heart"></i></a>
 									<a href=""><i class="fa fa-shopping-cart"></i></a>
 								</div>
-								<button class="addcart">Add to Cart</button>
+								<button class="addcart"> <a href="addtocart.jsp?id=<%= rs.getString(1) %>" class="text-decoration-none text-white">Add to Cart</a> </button>
 							</div>
-							
-							 <%
-        }}catch(Exception e) {
+						</div>
+					</div>
+					<%
+					}
+        }catch(Exception e) {
 			e.printStackTrace();
 		}
         
           
           %>
-						</div>
-				</div>
+	
+				
+						
+					
 			</div>
+			
 		</div>
 	</section>
 	
 	
+	     <%@ include file="Footer.jsp" %>
 	
 </body>
 </html>

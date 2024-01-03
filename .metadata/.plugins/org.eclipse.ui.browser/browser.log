@@ -6,3 +6,13 @@ Dec 21, 2023 24:33:22.86 [ERROR webrender_bindings::program_cache] shader-cache:
 Dec 22, 2023 24:48:22.44 NEW SESSION
 Dec 22, 2023 24:48:22.53 [GFX1-]: shader-cache: Timed out before finishing loads
 Dec 22, 2023 24:48:22.53 [ERROR webrender_bindings::program_cache] shader-cache: Timed out before finishing loads
+
+Dec 29, 2023 11:47:17.66 NEW SESSION
+Dec 29, 2023 11:47:17.78 [GFX1-]: shader-cache: Timed out before finishing loads
+Dec 29, 2023 11:47:17.78 [ERROR webrender_bindings::program_cache] shader-cache: Timed out before finishing loads
+
+Dec 29, 2023 12:22:18.19 NEW SESSION
+Dec 29, 2023 12:22:18.25 [GFX1-]: shader-cache: Timed out before finishing loads
+Dec 29, 2023 12:22:18.25 [ERROR webrender_bindings::program_cache] shader-cache: Timed out before finishing loads
+Dec 29, 2023 12:44:44.67 [Child 6696, MediaDecoderStateMachine #1] WARNING: 16547118bc0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:324
+Dec 29, 2023 12:54:46.25 [Child 6456, MediaDecoderStateMachine #3] WARNING: 1b5c6dc4ab0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:324

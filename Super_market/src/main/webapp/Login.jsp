@@ -18,11 +18,6 @@
 		<h2 class="fonts">SuperSavings Supermarket </h2>
 	</div>
 	
-	
-	
-	
-	
-	
 		<div class="container">
 			<div class="screen">
 				<div class="screen__content">
@@ -41,7 +36,7 @@
 						</div>
 						<div class="login__field">
 							<label for="loginas">Choose a Login as a</label>
-
+							
 							<select name="loginas" id="loginas">
 							  <option value="customer">Customer</option>
 							  <option value="admin">Admin</option>

@@ -31,10 +31,10 @@ public class editProductaction extends HttpServlet {
 			stat.executeUpdate("update addproductadmin  set p_name='"+p_name+"',p_category='"+p_category+"',p_price='"+p_price+"',p_active='"+active+"'where p_id='"+p_id+"'");
 			
 			
-//			if(active.equals("no")) {
-//				stat.executeUpdate("delete from cart where productid='"+p_id+" and address is NULL");
-//				
-//			}
+			if(active.equals("no")) {
+				stat.executeUpdate("delete from cart where productid='"+p_id+" and address is NULL");
+				
+			}
 			response.sendRedirect("allProductEdit.jsp?msg=done");
 			conn.close();			
 		}catch(Exception e) {

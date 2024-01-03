@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/Register2")
@@ -31,6 +32,8 @@ public class Register2 extends HttpServlet {
 			Statement stat = conn.createStatement();
 			stat.executeUpdate("insert into register (username,password,email,mob_num) values('"+username+"','"+password+"','"+email+"','"+mob+"')");
 			//out.println("data inserted");
+			HttpSession session1 = request.getSession();
+			session1.setAttribute("email",email);
 			response.sendRedirect("Login.jsp");
 			
 			conn.close();

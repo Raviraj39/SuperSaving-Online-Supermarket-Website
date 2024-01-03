@@ -6,6 +6,8 @@
     <%@ page import ="java.io.PrintWriter"%>
     <%@ page import ="javax.servlet.*" %>
     <%
+    String email=session.getAttribute("email").toString();
+   
 	
     %>
 <!DOCTYPE html>
@@ -45,10 +47,16 @@
 						<a class="nav-link active text-white" href="./Home.jsp">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-white" href="./products.jsp">Products</a>
+						<a class="nav-link text-white" href="products.jsp">Products</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-white" href="#">About us</a>
+						<a class="nav-link text-white" href="addtocart.jsp">Add To Cart <i class="fa fa-shopping-cart"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="./myorders.jsp">My Orders</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="./aboutus.jsp">About us</a>
 					</li>
 				</ul>
 				<form class="d-flex text-center justify-content-between   " role="search" >
@@ -85,7 +93,7 @@
 					<div class="carousel-caption">
 						<h2>BIG <span>SAVE</span></h2>
 						<p>Get flat <span>10% </span>Cashback</p>
-						<button type="button" class="addcart ">shop now</button>
+						<button type="button" class="addcart "><a href="products.jsp">shop now</a></button>
 					</div>
 				</div>
 				<div class="carousel-item" data-bs-interval="3000">
@@ -93,7 +101,7 @@
 					<div class="carousel-caption">
 						<h2>BIG <span>DEAL</span></h2>
 						<p>Get Best Offer Upto <span>20%</span></p>
-						<button type="button" class="addcart">shop now</button>
+						<button type="button" class="addcart "><a href="products.jsp">shop now</a></button>
 					</div>
 				</div>
 				<div class="carousel-item" data-bs-interval="3000">
@@ -101,7 +109,7 @@
 					<div class="carousel-caption">
 						<h2>HEALTHY <span>SAVING</span></h2>
 						<p>Get Upto <span>30% </span>Off</p>
-						<button type="button" class="addcart">shop now</button>
+						<button type="button" class="addcart "><a href="products.jsp">shop now</a></button>
 					</div>
 				</div>
 				<div class=" carousel-item active" data-bs-interval="2000">
@@ -109,7 +117,7 @@
 					<div class="carousel-caption">
 						<h2>TODAY <span>DISCOUNT</span></h2>
 						<p>Get Now <span> 40% </span>Discount</p>
-						<button type="button" class="addcart">shop now</button>
+						<button type="button" class="addcart "><a href="products.jsp">shop now</a></button>
 					</div>
 				</div>
 			</div>
@@ -144,27 +152,27 @@
 					<div>
 						<img src="./images/illustrations/d2.jpg" alt="">
 						<p>Lay's Potato Chips</p>
-						<p>$9.00</p>
+						<p><i class="fa fa-inr"></i>9.00</p>
 					</div>
 					<div>
 						<img src="./images/illustrations/d1.jpg" alt="">
 						<p>Bingo Mad Angles</p>
-						<p>$9.00</p>
+						<p><i class="fa fa-inr"></i>9.00</p>
 					</div>
 					<div>
 						<img src="./images/illustrations/d4.jpg" alt="">
 						<p>Tata Salt</p>
-						<p>$19.00</p>
+						<p><i class="fa fa-inr"></i>19.00</p>
 					</div>
 					<div>
 						<img src="./images/illustrations/d5.jpg" alt="">
 						<p>Gujarat Dry Fruit</p>
-						<p>$59.00</p>
+						<p><i class="fa fa-inr"></i>59.00</p>
 					</div>
 					<div>
 						<img src="./images/illustrations/d3.jpg" alt="">
 						<p>Cadbury Dairy Milk</p>
-						<p>$99.00</p>
+						<p><i class="fa fa-inr"></i>99.00</p>
 					</div>
 				</div>
 
@@ -185,12 +193,12 @@
 							<h4><a href="">Alemonds</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
 							<div class="product-bottom-details">
-								<div class="product-price"><small>$96.00</small>$230.99</div>
+								<div class="product-price"><small><i class="fa fa-inr"></i>96.00</small>$230.99</div>
 								<div class="product-links">
 									<a href=""><i class="fa fa-heart"></i></a>
 									<a href=""><i class="fa fa-shopping-cart"></i></a>
 								</div>
-								<button class="addcart">View Products</button>
+						<button type="button" class="addcart "><a href="products.jsp">shop now</a></button>
 							</div>
 						</div>
 					</div>
@@ -204,12 +212,12 @@
 							<h4><a href="">Cashews</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
 							<div class="product-bottom-details">
-								<div class="product-price"><small>$96.00</small>$230.99</div>
+								<div class="product-price"><small><i class="fa fa-inr"></i>96.00</small>$230.99</div>
 								<div class="product-links">
 									<a href=""><i class="fa fa-heart"></i></a>
 									<a href=""><i class="fa fa-shopping-cart"></i></a>
 								</div>
-								<button class="addcart">View Products</button>
+						<button type="button" class="addcart "><a href="products.jsp">shop now</a></button>
 							</div>
 						</div>
 					</div>
@@ -223,12 +231,12 @@
 							<h4><a href="">Pistachios</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
 							<div class="product-bottom-details">
-								<div class="product-price"><small>$96.00</small>$230.99</div>
+								<div class="product-price"><small><i class="fa fa-inr"></i>96.00</small>$230.99</div>
 								<div class="product-links">
 									<a href=""><i class="fa fa-heart"></i></a>
 									<a href=""><i class="fa fa-shopping-cart"></i></a>
 								</div>
-								<button class="addcart">View Products</button>
+						<button type="button" class="addcart "><a href="products.jsp">shop now</a></button>
 							</div>
 						</div>
 					</div>
@@ -246,12 +254,12 @@
 							<h4><a href="">Freedom Oil, 1L</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
 							<div class="product-bottom-details">
-								<div class="product-price"><small>$96.00</small>$230.99</div>
+								<div class="product-price"><small><i class="fa fa-inr"></i>96.00</small>$230.99</div>
 								<div class="product-links">
 									<a href=""><i class="fa fa-heart"></i></a>
 									<a href=""><i class="fa fa-shopping-cart"></i></a>
 								</div>
-								<button class="addcart">View Products</button>
+						<button type="button" class="addcart "><a href="products.jsp">shop now</a></button>
 							</div>
 						</div>
 					</div>
@@ -265,12 +273,12 @@
 							<h4><a href="">Saffola Gold, 1L</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
 							<div class="product-bottom-details">
-								<div class="product-price"><small>$96.00</small>$230.99</div>
+								<div class="product-price"><small><i class="fa fa-inr"></i>96.00</small>$230.99</div>
 								<div class="product-links">
 									<a href=""><i class="fa fa-heart"></i></a>
 									<a href=""><i class="fa fa-shopping-cart"></i></a>
 								</div>
-								<button class="addcart">View Products</button>
+						<button type="button" class="addcart "><a href="products.jsp">shop now</a></button>
 							</div>
 						</div>
 					</div>
@@ -284,12 +292,12 @@
 							<h4><a href="">Fortune Oil, 5L</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
 							<div class="product-bottom-details">
-								<div class="product-price"><small>$96.00</small>$230.99</div>
+								<div class="product-price"><small><i class="fa fa-inr"></i>96.00</small>$230.99</div>
 								<div class="product-links">
 									<a href=""><i class="fa fa-heart"></i></a>
 									<a href=""><i class="fa fa-shopping-cart"></i></a>
 								</div>
-								<button class="addcart">View Products</button>
+						<button type="button" class="addcart "><a href="products.jsp">shop now</a></button>
 							</div>
 						</div>
 					</div>
@@ -521,13 +529,12 @@
 					<div class="col-xl-4 col-lg-4 col-md-6 mb-30">
 						<div class="footer-widget">
 							<div class="footer-widget-heading">
-								<h3>Useful Links</h3>
+								<>Useful Links</>
 							</div>
 							<ul>
-								<li><a href="#">Home</a></li>
+								<li><a href="Home.jsp">Home</a></li>
 								<li><a href="#">about</a></li>
 								<li><a href="#">services</a></li>
-								<li><a href="#">portfolio</a></li>
 								<li><a href="#">Contact</a></li>
 								<li><a href="#">About us</a></li>
 								<li><a href="#">Our Services</a></li>
@@ -540,7 +547,7 @@
 					<div class="col-xl-4 col-lg-4 col-md-6 mb-50">
 						<div class="footer-widget">
 							<div class="footer-widget-heading">
-								<h3>Subscribe</h3>
+								<>Subscribe</>
 							</div>
 							<div class="footer-text mb-25">
 								<p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>

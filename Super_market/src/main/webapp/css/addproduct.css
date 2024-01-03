@@ -1,7 +1,7 @@
 .body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.25;
-  background-color: #000;
+  background-color:  #6C63AC;
 }
 
 a{
@@ -104,16 +104,6 @@ table th {
     }
     
 
-/*footer*/
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color:#ccc;
-   color:black;
-   text-align: center;
-}
 
 .input-style {
   width: 90%;
@@ -121,8 +111,7 @@ table th {
   margin-left:5%;
   box-sizing: border-box;
   border: none;
-  background-color:white;
-  color: black;
+  color: white;
   font-size: 16px;
 }
 
@@ -158,8 +147,8 @@ hr
 {
 	width: 90%
 }
-h3
-{
+
+h3{
 	text-align: center;
 	color:white;
 }

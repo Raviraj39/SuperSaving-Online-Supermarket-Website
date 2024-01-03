@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%@ include file="Header.jsp"  %>
+<div style="color: black; text-align: center; font-size: 30px;" class="mt-5 mb-5">My Orders <i class='fab fa-elementor'></i></div>
+
+
+<%@ include file="Footer.jsp"  %>
+
+</body>
+</html>
